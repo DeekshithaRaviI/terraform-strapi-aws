@@ -1,16 +1,15 @@
-***# Terraform Strapi Deployment on AWS***
+# Terraform Strapi Deployment on AWS
 
 
 
-***A production-ready Infrastructure as Code solution to deploy Strapi CMS on AWS with secure networking and multi-environment support.***
+### A production-ready Infrastructure as Code solution to deploy Strapi CMS on AWS with secure networking and multi-environment support.
 
 
 
-***---***
 
 
 
-***## 📋 Task Requirements***
+## **📋 Task Requirements**
 
 
 
@@ -32,53 +31,52 @@
 
 
 
-***---***
 
 
 
-***## 🏗️ Architecture***
+
+## 🏗️ Architecture 
 
 
 
-***\*\*Network Layout:\*\****
-
-***```***
-
-***Internet → ALB (Public Subnets) → EC2 Instance (Private Subnet) → NAT Gateway → Internet***
-
-***```***
+Network Layout:
 
 
 
-***\*\*Components:\*\****
-
-***- \*\*VPC\*\*: 10.0.0.0/16 CIDR block***
-
-***- \*\*Public Subnets\*\*: Two subnets across different AZs for ALB***
-
-***- \*\*Private Subnet\*\*: Single subnet for EC2 instance***
-
-***- \*\*Internet Gateway\*\*: Public subnet internet connectivity***
-
-***- \*\*NAT Gateway\*\*: Outbound internet for private EC2***
-
-***- \*\*Application Load Balancer\*\*: Routes HTTP traffic to EC2***
-
-***- \*\*EC2 Instance\*\*: Amazon Linux 2023 with Docker + Strapi***
-
-***- \*\*Security Groups\*\*: ALB allows HTTP/HTTPS, EC2 allows port 1337 from ALB only***
+Internet → ALB (Public Subnets) → EC2 Instance (Private Subnet) → NAT Gateway → Internet
 
 
 
-***---***
+
+Components:
+
+VPC: 10.0.0.0/16 CIDR block
+
+Public Subnets: Two subnets across different AZs for ALB
+
+Private Subnet: Single subnet for EC2 instance
+
+Internet Gateway: Public subnet internet connectivity
+
+NAT Gateway: Outbound internet for private EC2
+
+Application Load Balancer: Routes HTTP traffic to EC2
+
+EC2 Instance: Amazon Linux 2023 with Docker + Strapi
+
+Security Groups: ALB allows HTTP/HTTPS, EC2 allows port 1337 from ALB only
 
 
 
-***## 📁 Project Structure***
 
 
 
-***```***
+
+## 📁 Project Structure
+
+
+
+
 
 ***terraform-strapi/***
 
@@ -108,7 +106,7 @@
 
 
 
-***---***
+
 
 
 
@@ -168,19 +166,13 @@
 
 ***terraform apply -var-file=prod.tfvars***
 
-***```***
+
+
+## ***⚙️ Configuration***
 
 
 
-***---***
-
-
-
-***## ⚙️ Configuration***
-
-
-
-***### Environment Variables***
+### ***Environment Variables***
 
 
 
@@ -204,7 +196,7 @@
 
 
 
-***### Strapi Secrets***
+### ***Strapi Secrets***
 
 
 
@@ -214,7 +206,7 @@
 
 ***openssl rand -base64 32***
 
-***```***
+
 
 
 
@@ -232,11 +224,11 @@
 
 
 
-***---***
 
 
 
-***## 🌐 Access Application***
+
+## ***🌐 Access Application***
 
 
 
@@ -252,15 +244,11 @@
 
 ***terraform output alb\_url***
 
-***```***
 
 
 
-***---***
 
-
-
-***## 🔐 Security Implementation***
+## ***🔐 Security Implementation***
 
 
 
@@ -296,15 +284,15 @@
 
 
 
-***---***
 
 
 
-***## 🔧 Technical Details***
+
+## ***🔧 Technical Details***
 
 
 
-***### User Data Script***
+### ***User Data Script***
 
 ***The `user-data.sh` script automatically:***
 
@@ -320,7 +308,7 @@
 
 
 
-***### Load Balancer Configuration***
+### ***Load Balancer Configuration***
 
 ***- Target Group: Port 1337, HTTP protocol***
 
@@ -332,7 +320,7 @@
 
 
 
-***### High Availability***
+### ***High Availability***
 
 ***- ALB spans two availability zones***
 
@@ -346,53 +334,7 @@
 
 
 
-***## 💰 Cost Estimate (us-east-1)***
-
-
-
-***| Resource | Monthly Cost |***
-
-***|----------|--------------|***
-
-***| EC2 t3.small | ~$15 |***
-
-***| NAT Gateway | ~$32 |***
-
-***| ALB | ~$16 |***
-
-***| EBS Volume | ~$1 |***
-
-***| \*\*Total\*\* | \*\*~$64\*\* |***
-
-
-
-***---***
-
-
-
-***## 🧹 Cleanup***
-
-
-
-***To destroy all resources:***
-
-***```bash***
-
-***terraform destroy -var-file=dev.tfvars***
-
-***```***
-
-
-
-***This removes all AWS resources and stops billing.***
-
-
-
-***---***
-
-
-
-***## 📝 Key Features***
+## ***📝 Key Features***
 
 
 
@@ -414,7 +356,7 @@
 
 
 
-***## 🔄 Workflow***
+## ***🔄 Workflow***
 
 
 
@@ -434,7 +376,7 @@
 
 
 
-***## 📌 Notes***
+## ***📌 Notes***
 
 
 
@@ -454,7 +396,7 @@
 
 
 
-***## 🤝 Contributing***
+## **🤝 Contributing**
 
 
 
