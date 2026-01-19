@@ -37,13 +37,13 @@ resource "aws_lb_target_group" "strapi" {
 
   health_check {
   enabled             = true
-  path                = "/"              # ✅ Root path instead of /admin
+  path                = "/"            
   protocol            = "HTTP"
-  matcher             = "200-399"        # ✅ Accept redirects too
-  interval            = 60               # ✅ Wait longer between checks
-  timeout             = 10               # ✅ Longer timeout
+  matcher             = "200-399"        
+  interval            = 60               
+  timeout             = 10              
   healthy_threshold   = 2
-  unhealthy_threshold = 3                # ✅ More grace attempts
+  unhealthy_threshold = 3            
 }
   tags = merge(
     var.common_tags,
